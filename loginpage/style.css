@@ -2,12 +2,15 @@
 
     margin:auto;
     margin-top:180px;
-    border: 3px solid black;
+    border: 3px none black;
     width: fit-content;
     height:fit-content;
     padding:20px;
+    backdrop-filter: blur(10px);
+    border-radius: 10%;
     
 }
+
 .login{
 
     display: flex;
@@ -15,10 +18,47 @@
     align-items: center;
     padding-bottom: 10px;
 }
+
 .button{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;         
+    gap: 80px; 
+        
+}
+
+body{
+   background-image: url('img/Jorogumo samurai.jpeg');
+   background-repeat:no-repeat ;
+   background-size: cover;
+}
+
+#resetButton{
+
+    color:red;
+    background: yellow;
+    padding: 5px;
+    width: 90px;
+    border-radius: 30px;
+}
+
+#resetButton:hover{
+   color:yellow;
+    background:red;
+}
+
+#loginButton{
+
+    color:red;
+    background: yellow;
+    padding: 5px;
+     width: 90px;
+    border-radius: 30px;
+    
+}
+
+#loginButton:hover{
+   color:yellow;
+    background:red;
 }

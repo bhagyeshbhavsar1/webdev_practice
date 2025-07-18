@@ -1,0 +1,14 @@
+body{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#info{
+
+    background-color: aliceblue;
+    padding: 40px;
+    margin-top:30px;
+    
+}

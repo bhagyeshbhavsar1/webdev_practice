@@ -2,72 +2,111 @@
 <html>
     <head>
         <meta name ="author" content = "bhagyesh bhavasar">
-        <meta http-equiv = "refresh" content = "10">
+        <meta http-equiv = "refresh" content = "100">
         <meta name = "keyword" content = "js , practice, html, webdev">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <meta name = "description" content = "js practice"> 
 
         <title>js logic practice</title>
 
-       
+       <link rel = "stylesheet" href = "style.css">
     </head>
     <body>
-        <from>
+        <form id = "info">
             
-            <h1>random checkbox list</h1>
+            <h1>random hobbies list</h1>
 
-            <label id = "1">
-                <input type = "checkbox">
+            <label >
+                <input type = "checkbox" name = "hobbies" value = "anime">
                 1.anime
             </label>
 <br>
-              <label id = "2">
-                <input type = "checkbox">
+              <label >
+                <input type = "checkbox" name = "hobbies" value ="cooking">
                 2.cooking 
             </label>
 <br>
-            <label id = "3">
-                <input type = "checkbox">
+            <label >
+                <input type = "checkbox" name = "hobbies" value = "killing">
                 3.killing 
             </label>
 <br>
-              <label id = "4">
-                <input type = "checkbox">
+              <label >
+                <input type = "checkbox" name = "hobbies" value = "shooping" >
                 4.shooping 
             </label>
 <br>
 <br>
-            <h1>random radio list</h1>
+            <h1>random country list</h1>
 
-            <label id = "a">
-                <input type="radio" name = "radio">
+            <label>
+                <input type="radio" name = "country" value = "japan">
                 japan
             </label>
 <br>
-            <label id = "b">
-                <input type="radio" name = "radio">
-                usa
+            <label>
+                <input type="radio" name = "country" value = "china">
+                china
             </label>
 <br>
-            <label id = "c">
-                <input type="radio" name = "radio">
+            <label>
+                <input type="radio" name = "country" value="nashik">
                 nashik
             </label>
 <br>
-            <label id = "d">
-                <input type="radio" name = "radio">
+            <label>
+                <input type="radio" name = "country" value="usa">
                 usa
             </label>
+<br>
+<br>
+            <input type="submit" id="click">
 <br>
 <br>
 <br>
             
-            <textarea id = "list" rows="20" cols = "20"></textarea>
-        </from>
+            <textarea id = "output" rows="10" cols = "40"></textarea>
+        </form>
         
 
         <script>
 
+        const page = document.getElementById("info");
+        page.addEventListener("submit", update)
+
+        function update(event){
+
+            event.preventDefault();
+
+            const checkBoxs = document.querySelectorAll('input[type = "checkbox"]:checked');
+            const Radios = document.querySelector('input[name="country"]:checked');
+            const textarea = document.getElementById("output");
+
+            let selectedItems = [];
+            let selectedCountry = [];
+            
+            checkBoxs.forEach(cb => {
+
+             selectedItems.push(cb.value);
+
+            });
+
+             if (Radios) {
+
+            selectedCountry.push(Radios.value);
+            
+            }
+
+            if (selectedItems.length === 0){
+                textarea.value = "no items selected";
+            }else{
+                textarea.value = "the country is :" + selectedCountry[0]  + " \n\nthe hobbies are:" + selectedItems.join(", ");
+                
+            }
+             
+
+        }
+    
         </script>
     </body>
 </html>
