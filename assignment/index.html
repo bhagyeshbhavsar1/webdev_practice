@@ -10,11 +10,20 @@
         <title>js logic practice</title>
 
        <link rel = "stylesheet" href = "style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    
     </head>
     <body>
         <form id = "info">
             
-            <h1>random hobbies list</h1>
+            <h1 class = "heading">random hobbies list</h1>
 
             <label >
                 <input type = "checkbox" name = "hobbies" value = "anime">
@@ -37,7 +46,7 @@
             </label>
 <br>
 <br>
-            <h1>random country list</h1>
+            <h1 class = "heading">random country list</h1>
 
             <label>
                 <input type="radio" name = "country" value = "japan">
@@ -98,9 +107,13 @@
             }
 
             if (selectedItems.length === 0){
-                textarea.value = "no items selected";
-            }else{
-                textarea.value = "the country is :" + selectedCountry[0]  + " \n\nthe hobbies are:" + selectedItems.join(", ");
+                textarea.value =  "the hobbies are: " + "no items selected" + "\n\nthe country is: " + selectedCountry[0]   ;
+            }
+            else if(selectedCountry.length === 0){
+                textarea.value = "the hobbies are: " + selectedItems.join(", ") + "\n\nthe country is: " + "no items selected";
+            }
+            else{
+                textarea.value = "the hobbies are: " + selectedItems.join(", ") + "\n\nthe country is: " + selectedCountry[0] ;
                 
             }
              

@@ -10,5 +10,31 @@ body{
     background-color: aliceblue;
     padding: 40px;
     margin-top:30px;
+    border-radius: 40px;
     
+}
+
+.heading{
+
+    font-family: "Italianno", cursive;
+}
+
+label{
+
+    font-family: "Alumni Sans", sans-serif;
+}
+
+#click{
+
+    border-radius: 2px;
+    border-width: 2px;
+    font-family: fantasy;
+}
+#output{
+
+    border-radius: 20px;
+   background-color: rgb(195, 195, 195);
+   font-size: large;
+   padding: 20px;
+   border-width: 5px;
 }
