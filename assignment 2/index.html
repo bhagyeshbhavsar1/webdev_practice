@@ -1,0 +1,25 @@
+<!--creat a node , add some text and replace it's tag with another tag-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            assignment 2
+        </title>
+    </head>
+    <body>
+            <ul id = "frutis">
+                <li id = "banana">banana</li>
+                <li id = "orange">orange</li>
+                <li id = "apple">apple</li>
+            </ul>
+    </body>
+    <script>
+ 
+        const element = document.getElementById("frutis");
+        const lastChild = element.lastElementChild;
+        lastChild.style.backgroundColor = "red";
+        const firstChild = element.firstElementChild;
+        firstChild.style.backgroundColor = "yellow";
+        
+    </script>
+</html>

@@ -92,32 +92,26 @@
             const textarea = document.getElementById("output");
 
             let selectedItems = [];
-            let selectedCountry = [];
-            
+        
             checkBoxs.forEach(cb => {
 
              selectedItems.push(cb.value);
 
             });
 
-             if (Radios) {
+            if(selectedItems.length === 0 && Radios === null){
 
-            selectedCountry.push(Radios.value);
-            
-            }
+                textarea.value = "no items selected";
 
-            if (selectedItems.length === 0){
-                textarea.value =  "the hobbies are: " + "no items selected" + "\n\nthe country is: " + selectedCountry[0]   ;
             }
-            else if(selectedCountry.length === 0){
-                textarea.value = "the hobbies are: " + selectedItems.join(", ") + "\n\nthe country is: " + "no items selected";
+            else if(Radios === null){
+                textarea.value =  "the hobbies are: " + selectedItems.join(", ")  + "\n\nthe country is: "  ;
+
             }
             else{
-                textarea.value = "the hobbies are: " + selectedItems.join(", ") + "\n\nthe country is: " + selectedCountry[0] ;
-                
-            }
-             
+                textarea.value =  "the hobbies are: " + selectedItems.join(", ")  + "\n\nthe country is: " + Radios.value   ;
 
+            }
         }
     
         </script>
