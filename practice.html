@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "icon" href = "path to your favicon file here" type = "image/file type extion"> 
+        <title></title>
+    </head>
+    <body>
+        <form>
+           <label>input the no. of maggi packet's you'll use to display the amount of ingredient :</label> <input type ="number" id="input">
+           <br>
+           <br>
+            <input type ="submit" value="enter">
+            <br>
+            <br>
+            <textarea id = "output" rows ="17" cols = "30" ></textarea>
+        </form>
+        <script>
+
+            let maggiAmt = document.getElementById("input");
+            let textarea = document.getElementById("output");
+
+            let excecute = addEventListener("submit",(event)=>{
+                event.preventDefault();
+                maggi(maggiAmt.value)}
+            );
+
+           const maggi = function(quantity){
+                const ingredients = ()=>{
+
+                    let massala, vegies, salt, water, noodels;
+
+                    massala = 2*quantity;
+                    vegies = 1*quantity;
+                    salt = 2*quantity;
+                    water = 250*quantity;
+                    noodels = 1*quantity;
+                    
+                      if(quantity != 0){
+                  textarea.value = "the massala packet you'll need is : "+ massala + "packet's massala\n\n" +
+                             "the vegies bowl you'll need is : " + vegies + "bowls\n\n"+
+                             "the salt you'll need is : " + salt + "table spoon\n\n" +
+                             "the water you'll need is : " + water + "ml\n\n"+
+                             "the noodels you'll need is : " +noodels + "packet\n\n";
+            }
+            else{
+                textarea.value = "please select the no. of maggi packet's";
+            }
+                }
+                ingredients();
+
+            }
+
+          
+
+           
+        </script> 
+    </body>
+</html>
