@@ -6,23 +6,56 @@
             assignment 2
         </title>
     </head>
-    <body>
-            <ul id = "frutis">
-                <li id = "banana">banana</li>
-                <li id = "orange">orange</li>
-                <li id = "apple">apple</li>
+     <body>
+         <p id = "text">FUBAR</p>
+
+            <ul id = "lifelist">
+                <li>my life is good</li>
+                <li>my academics is good</li>
+                <li>my relationships with humans is good</li>
             </ul>
+
+                <button id = "onclick">click the button to change the size of the heading</button>
+           
+            
     </body>
     <script>
- 
-        const element = document.getElementByTagName("ul");
-        const lastChild = element.lastElementChild;
-        lastChild.style.backgroundColor = "red";
-        const firstChild = element.firstElementChild;
-        firstChild.style.backgroundColor = "yellow";
-        const children = element.children;
 
+        addEventListener("click", (event)=>{
+            event.preventDefault();
+
+        let para = document.getElementById("text");
+        let headElement = document.createElement("h1");
+        let heading = para.replaceWith(headElement);
+        headElement.textContent = "FUBAR";  
+
+
+        
+        let Old = document.getElementById("lifelist");
+        let New = document.createElement("ol");
+        let changed = Old.replaceWith(New);
+
+        let li1 = document.createElement("li");
+        li1.textContent = "my life is FUBAR";
+        New.appendChild(li1);
+
+        let li2 = document.createElement("li");
+        li2.textContent = "my academics is FUBAR";
+        New.appendChild(li2);
+
+        let li3 = document.createElement("li");
+        li3.textContent = "my relationships with humans is FUBAR";
+        New.appendChild(li3);
+
+        let linebreak = document.createElement("br");
+        New.appendChild(linebreak);
+
+        let message = document.createElement("p");
+        message.textContent = "previous list was all lie 😢"
+        New.appendChild(message);
+
+        });
        
-     
+
     </script>
 </html>
