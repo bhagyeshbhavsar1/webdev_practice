@@ -1,119 +1,120 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name ="author" content = "bhagyesh bhavasar">
-        <meta http-equiv = "refresh" content = "100">
-        <meta name = "keyword" content = "js , practice, html, webdev">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <meta name = "description" content = "js practice"> 
+  <head>
+    <meta name="author" content="bhagyesh bhavasar" />
+    <meta http-equiv="refresh" content="100" />
+    <meta name="keyword" content="js , practice, html, webdev" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <meta name="description" content="js practice" />
 
-        <title>js logic practice</title>
+    <title>js logic practice</title>
 
-       <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
 
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-    
-    </head>
-    <body>
-        <form id = "info">
-            
-            <h1 class = "heading">random hobbies list</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form id="info">
+      <h1 class="heading">random hobbies list</h1>
 
-            <label >
-                <input type = "checkbox" name = "hobbies" value = "anime">
-                1.anime
-            </label>
-<br>
-              <label >
-                <input type = "checkbox" name = "hobbies" value ="cooking">
-                2.cooking 
-            </label>
-<br>
-            <label >
-                <input type = "checkbox" name = "hobbies" value = "killing">
-                3.killing 
-            </label>
-<br>
-              <label >
-                <input type = "checkbox" name = "hobbies" value = "shooping" >
-                4.shooping 
-            </label>
-<br>
-<br>
-            <h1 class = "heading">random country list</h1>
+      <label>
+        <input type="checkbox" name="hobbies" value="anime" />
+        1.anime
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" name="hobbies" value="cooking" />
+        2.cooking
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" name="hobbies" value="killing" />
+        3.killing
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" name="hobbies" value="shooping" />
+        4.shooping
+      </label>
+      <br />
+      <br />
+      <h1 class="heading">random country list</h1>
 
-            <label>
-                <input type="radio" name = "country" value = "japan">
-                japan
-            </label>
-<br>
-            <label>
-                <input type="radio" name = "country" value = "china">
-                china
-            </label>
-<br>
-            <label>
-                <input type="radio" name = "country" value="nashik">
-                nashik
-            </label>
-<br>
-            <label>
-                <input type="radio" name = "country" value="usa">
-                usa
-            </label>
-<br>
-<br>
-            <input type="submit" id="click">
-<br>
-<br>
-<br>
-            
-            <textarea id = "output" rows="10" cols = "40"></textarea>
-        </form>
-        
+      <label>
+        <input type="radio" name="country" value="japan" />
+        japan
+      </label>
+      <br />
+      <label>
+        <input type="radio" name="country" value="china" />
+        china
+      </label>
+      <br />
+      <label>
+        <input type="radio" name="country" value="nashik" />
+        nashik
+      </label>
+      <br />
+      <label>
+        <input type="radio" name="country" value="usa" />
+        usa
+      </label>
+      <br />
+      <br />
+      <input type="submit" id="click" />
+      <br />
+      <br />
+      <br />
 
-        <script>
+      <textarea id="output" rows="10" cols="40"></textarea>
+    </form>
 
-        const page = document.getElementById("info");
-        page.addEventListener("submit", update)
+    <script>
+      const page = document.getElementById("info");
+      page.addEventListener("submit", update);
 
-        function update(event){
+      function update(event) {
+        event.preventDefault();
 
-            event.preventDefault();
+        const checkBoxs = document.querySelectorAll(
+          'input[type = "checkbox"]:checked'
+        );
+        const Radios = document.querySelector('input[name="country"]:checked');
+        const textarea = document.getElementById("output");
 
-            const checkBoxs = document.querySelectorAll('input[type = "checkbox"]:checked');
-            const Radios = document.querySelector('input[name="country"]:checked');
-            const textarea = document.getElementById("output");
+        let selectedItems = [];
 
-            let selectedItems = [];
-        
-            checkBoxs.forEach(cb => {
+        checkBoxs.forEach((cb) => {
+          selectedItems.push(cb.value);
+        });
 
-             selectedItems.push(cb.value);
-
-            });
-
-            if(selectedItems.length === 0 && Radios === null){
-
-                textarea.value = "no items selected";
-
-            }
-            else if(Radios === null){
-                textarea.value =  "the hobbies are: " + selectedItems.join(", ")  + "\n\nthe country is: "  ;
-
-            }
-            else{
-                textarea.value =  "the hobbies are: " + selectedItems.join(", ")  + "\n\nthe country is: " + Radios.value   ;
-
-            }
+        if (selectedItems.length === 0 && Radios === null) {
+          textarea.value = "no items selected";
+        } else if (Radios === null) {
+          textarea.value =
+            "the hobbies are: " +
+            selectedItems.join(", ") +
+            "\n\nthe country is: ";
+        } else {
+          textarea.value =
+            "the hobbies are: " +
+            selectedItems.join(", ") +
+            "\n\nthe country is: " +
+            Radios.value;
         }
-    
-        </script>
-    </body>
+      }
+    </script>
+  </body>
 </html>
